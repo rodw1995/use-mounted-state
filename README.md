@@ -18,20 +18,20 @@ import useIsMounted from '@rodw95/use-mounted-state';
 import React, { useCallback, useState } from 'react';
 
 export default () => {
-	const isMounted = useIsMounted();
-	const [state, setState] = useState(null);
+  const isMounted = useIsMounted();
+  const [state, setState] = useState(null);
 
-	 const doFetch = useCallback(async () => {
-		 const result = await fetchAsync();
-		 if (isMounted()) {
-			 // Only set state if still mounted
-			 setState(result);
-		 }
-	 });
+  const doFetch = useCallback(async () => {
+    const result = await fetchAsync();
+    if (isMounted()) {
+      // Only set state if still mounted
+      setState(result);
+    }
+  });
 
-	 return (
-		 // ...
-	 );
+  return (
+    // ...
+  );
 };
 ```
 
